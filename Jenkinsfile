@@ -9,7 +9,7 @@ pipeline {
             steps {
                 // write your logic here
                 git branch: 'main',
-                    url:'https://github.com/mbhargavi4ever-maker/java-batch-job-example.git'
+                    url:'https://github.com/NivedithaPrakas/java-batch-job-example.git'
             }
         }
         stage('Build') {
