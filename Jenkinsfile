@@ -40,9 +40,13 @@ pipeline {
                 }
 
                 success {
-                     mail to: 'nivedithaprakashkp@gmail.com',
-                 subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "Job '${env.JOB_NAME}' succeeded. ${env.BUILD_URL}"
+                    echo 'Build successful - sending success email.'
+                    emailext(
+                        subject: "Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body : """Successfully completed""",
+                        to: 'nivedithaprakashkp@gmail.com',
+                        mimeType: 'text/html'
+                        )
             }
                 failure {
                     mail to: 'nivedithaprakashkp@gmail.com',
