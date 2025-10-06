@@ -35,8 +35,6 @@ pipeline {
                 }
             }
         }
-        stage('Post Build Notification') {
-            // write your logic here
     }
         post{
             failure{
